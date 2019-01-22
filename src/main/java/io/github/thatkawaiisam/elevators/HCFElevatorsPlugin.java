@@ -2,8 +2,8 @@ package io.github.thatkawaiisam.elevators;
 
 import io.github.plugintemplate.PluginTemplate;
 import io.github.plugintemplate.handler.Handler;
-import io.github.plugintemplate.handler.impl.ListenerHandler;
-import io.github.thatkawaiisam.configs.BukkitConfigHelper;
+import io.github.plugintemplate.handler.impl.ConfigHandler;
+import io.github.plugintemplate.handler.impl.ModuleHandler;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -12,18 +12,14 @@ public class HCFElevatorsPlugin extends PluginTemplate {
 
     @Getter private static HCFElevatorsPlugin instance;
 
-    private BukkitConfigHelper elevatorsConfig;
-
     @Override
     public void onEnable() {
         instance = this;
 
-        elevatorsConfig = new BukkitConfigHelper(this, "config", getDataFolder().getAbsolutePath());
-
         if (getHandlers() == null) {
             setHandlers(new ArrayList<>());
-            getHandlers().add(new ListenerHandler("io.github.thatkawaiisam.elevators", this));
-
+            getHandlers().add(new ConfigHandler(this));
+            getHandlers().add(new ModuleHandler("io.github.thatkawaiisam.elevators.modules", this,false));
         }
 
         getHandlers().forEach(Handler::enable);

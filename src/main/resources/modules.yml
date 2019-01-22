@@ -1,8 +1,8 @@
 #Stock standard Velt/Arcane elevators
-Sign-Elevators: true
+Sign: true
 
 #MineHQ like system
-Minecart-Elevators: true
+Minecart: true
 
 #Inspired from Minecorner
-Carpet-Elevators: true
+Carpet: true

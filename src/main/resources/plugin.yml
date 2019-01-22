@@ -1,6 +1,6 @@
 name: HCF-Elevators
 version: 1.0-SNAPSHOT
 author: ThatKawaiiSam
-description: TODO
-website: TODO
+description: All in one HCF Elevator plugin!
+website: MC-Market
 main: io.github.thatkawaiisam.elevators.HCFElevatorsPlugin
