@@ -2,7 +2,6 @@ package io.github.thatkawaiisam.elevators;
 
 import io.github.plugintemplate.PluginTemplate;
 import io.github.plugintemplate.handler.Handler;
-import io.github.plugintemplate.handler.impl.ConfigHandler;
 import io.github.plugintemplate.handler.impl.ModuleHandler;
 import lombok.Getter;
 
@@ -18,7 +17,6 @@ public class HCFElevatorsPlugin extends PluginTemplate {
 
         if (getHandlers() == null) {
             setHandlers(new ArrayList<>());
-            getHandlers().add(new ConfigHandler(this));
             getHandlers().add(new ModuleHandler("io.github.thatkawaiisam.elevators.modules", this,false));
         }
 

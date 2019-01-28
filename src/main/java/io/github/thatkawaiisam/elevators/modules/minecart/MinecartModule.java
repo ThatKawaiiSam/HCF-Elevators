@@ -23,6 +23,7 @@ public class MinecartModule extends Module {
     @Override
     public void onEnable() {
         getListeners().add(new Listener() {
+            //Minecart Exit
             @EventHandler
             public void onMinecartExit(VehicleExitEvent event){
                 if(event.getVehicle() instanceof Minecart && event.getExited() instanceof Player){

@@ -33,10 +33,8 @@ public class SignModule extends Module {
             //Sign Interact
             @EventHandler
             public void onSignInteract(PlayerInteractEvent event) {
-                if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {
-                    return;
-                }
-                if (!signMaterials.contains(event.getClickedBlock().getType())) {
+                if (event.getAction() != Action.RIGHT_CLICK_BLOCK
+                    || !signMaterials.contains(event.getClickedBlock().getType())) {
                     return;
                 }
                 final BlockState blockState = event.getClickedBlock().getState();
